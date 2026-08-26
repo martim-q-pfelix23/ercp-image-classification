@@ -276,12 +276,8 @@ The most important reproducibility safeguard in this project is the **patient-le
 
 All images associated with a given patient remain inside a single partition:
 
-\[
-P_{\text{train}} \cap P_{\text{val}} =
-P_{\text{train}} \cap P_{\text{test}} =
-P_{\text{val}} \cap P_{\text{test}} =
-\varnothing
-\]
+
+$P_{\text{train}} \cap P_{\text{val}} = P_{\text{train}} \cap P_{\text{test}} = P_{\text{val}} \cap P_{\text{test}} = \varnothing$
 
 This prevents highly related images from the same patient appearing in both training and evaluation sets.
 
