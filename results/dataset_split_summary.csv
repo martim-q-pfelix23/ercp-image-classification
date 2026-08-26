@@ -1,0 +1,4 @@
+split,patients,Biliary_Leaks,Lithiasis,Normal,Stricture,total_images
+train,305,110,505,197,255,1067
+val,65,24,98,59,53,234
+test,66,17,123,43,84,267

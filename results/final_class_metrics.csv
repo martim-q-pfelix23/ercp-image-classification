@@ -1,0 +1,5 @@
+class,precision,recall,f1,support
+Biliary_Leaks,0.75,0.7059,0.7273,17
+Lithiasis,0.8534,0.8049,0.8285,123
+Normal,0.6316,0.8372,0.72,43
+Stricture,0.9103,0.8452,0.8765,84

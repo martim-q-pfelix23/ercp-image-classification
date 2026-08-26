@@ -1,0 +1,48 @@
+{
+  "model_name": "Direct 6-model optimized ensemble",
+  "description": "Direct 6-model weighted ensemble. The final model is reconstructed from individual checkpoints plus these weights.",
+  "class_names": [
+    "Biliary_Leaks",
+    "Lithiasis",
+    "Normal",
+    "Stricture"
+  ],
+  "model_order": [
+    "efficientnet_b7",
+    "densenet121",
+    "mobilenet_v2",
+    "resnet50",
+    "convnext_tiny_vae",
+    "efficientnet_b0_vae"
+  ],
+  "weights": {
+    "efficientnet_b7": 0.3721735036614512,
+    "densenet121": 0.0005758316571667099,
+    "mobilenet_v2": 0.17910230571330052,
+    "resnet50": 0.00377795725580234,
+    "convnext_tiny_vae": 0.3063778824440557,
+    "efficientnet_b0_vae": 0.1379925192682236
+  },
+  "checkpoint_paths_original": {
+    "efficientnet_b7": "/kaggle/input/models/martimflix/efficientnet/pytorch/default/1/efficientnet_b7.pth",
+    "densenet121": "/kaggle/input/models/martimflix/densenet-sandra/pytorch/default/1/densenet_imagens_geradas_todas_410.pth",
+    "mobilenet_v2": "/kaggle/input/models/martimflix/mobilenet/pytorch/default/1/mobilenet_v2.pth",
+    "resnet50": "/kaggle/input/models/martimflix/resnet/pytorch/default/1/resnet50_img_geradas_410.pth",
+    "convnext_tiny_vae": "/kaggle/input/models/martimflix/convenet-sandra/pytorch/default/1/convnext_tiny_VAE_seed0.pth",
+    "efficientnet_b0_vae": "/kaggle/input/models/martimflix/efficient-netb0/pytorch/default/1/efficientnet_b0_VAE_resized.pth"
+  },
+  "transforms": {
+    "efficientnet_b7": "eval_transforms: LoadImage -> EnsureChannelFirst -> Resize((512,512)) -> NormalizeIntensity -> repeat_if_needed -> ToTensor",
+    "densenet121": "eval_transforms: LoadImage -> EnsureChannelFirst -> Resize((512,512)) -> NormalizeIntensity -> repeat_if_needed -> ToTensor",
+    "mobilenet_v2": "eval_transforms: LoadImage -> EnsureChannelFirst -> Resize((512,512)) -> NormalizeIntensity -> repeat_if_needed -> ToTensor",
+    "resnet50": "eval_transforms: LoadImage -> EnsureChannelFirst -> Resize((512,512)) -> NormalizeIntensity -> repeat_if_needed -> ToTensor",
+    "convnext_tiny_vae": "eval_transforms: LoadImage -> EnsureChannelFirst -> Resize((512,512)) -> NormalizeIntensity -> repeat_if_needed -> ToTensor",
+    "efficientnet_b0_vae": "b0_eval_transforms: LoadImage -> EnsureChannelFirst -> Resize((224,224)) -> NormalizeIntensity -> repeat_if_needed -> ToTensor"
+  },
+  "final_results": {
+    "val_macro_f1": 0.713563823366088,
+    "test_macro_f1": 0.7880669549986147,
+    "val_accuracy": 0.7521367521367521,
+    "test_accuracy": 0.8164794007490637
+  }
+}

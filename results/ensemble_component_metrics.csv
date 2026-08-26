@@ -1,0 +1,7 @@
+model,validation_macro_f1,test_macro_f1
+EfficientNet-B7,0.6008,0.7439
+DenseNet121,0.5825,0.6665
+MobileNetV2,0.5893,0.5578
+ResNet50,0.5688,0.7359
+ConvNeXt-Tiny + VAE,0.6594,0.7434
+EfficientNet-B0 + VAE,0.5085,0.6492
