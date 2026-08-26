@@ -101,11 +101,9 @@ The experiments in this repository use a filtered subset of **1,568 labelled ima
 
 All images belonging to the same patient remain in the same split:
 
-\[
-P_{\mathrm{train}}\cap P_{\mathrm{val}} =
-P_{\mathrm{train}}\cap P_{\mathrm{test}} =
-P_{\mathrm{val}}\cap P_{\mathrm{test}} = \varnothing
-\]
+
+$P_{\mathrm{train}}\cap P_{\mathrm{val}} = P_{\mathrm{train}}\cap P_{\mathrm{test}} = P_{\mathrm{val}}\cap P_{\mathrm{test}} = \varnothing$
+
 
 This is a central design choice: an image-level random split could leak highly related frames from the same patient into both training and evaluation data.
 
@@ -160,13 +158,9 @@ This led to a hierarchical-equivalent system reaching **0.7868 test Macro F1** b
 
 The final prediction is:
 
-\[
-P_{\text{final}}(y\mid x)
-=
-\sum_{m=1}^{6} w_m P_m(y\mid x),
-\qquad
-\sum_{m=1}^{6}w_m = 1
-\]
+
+$P_{\text{final}}(y\mid x) = \sum_{m=1}^{6} w_m P_m(y\mid x), \qquad  \sum_{m=1}^{6}w_m = 1$
+
 
 with weights selected using **validation Macro F1 only**.
 
@@ -332,18 +326,15 @@ notebooks/07_ensemble/final_weighted_ensemble.ipynb
 
 ## Model Checkpoints
 
-The final ensemble requires six trained checkpoints.
+Trained model checkpoints are not included in this repository.
 
-The GitHub source archive used to prepare this portfolio version contained **Git LFS pointer files rather than the checkpoint binaries themselves**. For transparency, `models/checkpoint_manifest.csv` stores the original LFS object hashes and expected sizes.
+The original experiments used locally stored PyTorch checkpoints, but the
+binary weights are no longer distributed with the project. All model
+architectures, training procedures, ensemble configuration and evaluation
+results required to reproduce the experiments are preserved in the repository.
 
-For a public release, the preferred approach is to publish the final checkpoints through **Git LFS, GitHub Releases or a model registry**, rather than committing ~1 GB of binary weights into normal Git history.
-
-The ensemble definition itself is fully preserved in:
-
-```text
-results/final_ensemble_config.json
-results/ensemble_weights.csv
-```
+The models can be retrained using the corresponding notebooks under
+`notebooks/`.
 
 ---
 
