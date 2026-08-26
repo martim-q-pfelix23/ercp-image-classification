@@ -1,0 +1,5 @@
+model,test_accuracy,test_macro_f1,best_validation_macro_f1
+DenseNet121,0.6592,0.6207,0.5901
+ResNet50,0.6367,0.6165,0.4895
+MobileNetV2,0.6517,0.5578,0.5893
+DeiT3-Small,0.5506,0.3818,0.5128
